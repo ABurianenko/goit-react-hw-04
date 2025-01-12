@@ -7,8 +7,8 @@ const ImageGallery = forwardRef(({ images, onImageClick }, ref) => {
   return (
     <ul className="gallery" ref={ref}>
       {images.map(image => (
-        <li key={image.id} className="thumb" onClick={() => onImageClick(image)}>
-          <ImageCard info={image} />
+        <li key={image.id} className="thumb" >
+          <ImageCard info={image} onClick={() => onImageClick(image)}/>
         </li>
       ))}
     </ul>

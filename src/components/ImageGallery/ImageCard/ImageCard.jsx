@@ -5,11 +5,11 @@ const ImageCard = ({
   info: {
     alt_description,
     urls: { small },
-  },
+  }, onClick
 }) => {
   return (
     <div>
-      <img className={s.galleryImage} src={small} alt={alt_description} />
+      <img className={s.galleryImage} src={small} alt={alt_description} onClick={onClick} />
     </div>
   );
 };
