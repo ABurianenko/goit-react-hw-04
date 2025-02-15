@@ -1,12 +1,15 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import customToast from '../ErrorMessage/Toast/ToastMessage';
 import s from './SearchBar.module.css';
 
-const SearchBar = ({ onSubmit }) => {
-  const [query, setQuery] = useState('');
+interface SearchBarPrors {
+  onSubmit: (query: string) => void;
+}
 
-  const handleSubmit = e => {
+const SearchBar = ({ onSubmit }:SearchBarPrors) => {
+  const [query, setQuery] = useState<string>('');
+
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     if (query.trim() === '') {
@@ -34,10 +37,6 @@ const SearchBar = ({ onSubmit }) => {
       </form>
     </header>
   );
-};
-
-SearchBar.propTypes = {
-  onSubmit: PropTypes.func,
 };
 
 export default SearchBar;

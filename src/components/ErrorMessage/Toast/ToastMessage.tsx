@@ -1,7 +1,12 @@
 
 import toast from 'react-hot-toast';
 
-const customToast = (type, message) => {
+interface toastProps {
+  type: 'warn' | 'error' | 'success';
+  message: string;
+}
+
+const customToast = ({type, message}: toastProps) => {
   const styles = {
     warn: { icon: '⚠️', border: '#FFA500', color: '#FFA500' },
     error: { icon: '❌', border: '#FF0000', color: '#FF0000' },
